@@ -49,6 +49,7 @@ class AuthSubscriber implements SubscriberInterface
             'WM_SEC.AUTH_SIGNATURE' => $signature,
             'WM_CONSUMER.ID' => $consumerId,
         ];
+        
         $currentHeaders = $event->getRequest()->getHeaders();
         unset($currentHeaders['Authorization']);
         $updatedHeaders = array_merge($currentHeaders, $headers);
